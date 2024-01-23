@@ -1,9 +1,22 @@
-public class Bicycle {
+public class Bicycle extends Transport implements ServiceStation {
 
-    public String modelName;
-    public int wheelsCount;
+    public Bicycle(String modelName, int wheelsCount) {
+        super(modelName, wheelsCount);
+    }
 
-    public void updateTyre() {
-        System.out.println("Меняем покрышку");
+    @Override
+    public String getModelName() {
+        return super.getModelName();
+    }
+    @Override
+    public int getWheelsCount() {
+        return super.getWheelsCount();
+    }
+
+    @Override
+    public void check() {
+        System.out.println();
+        System.out.println("Обслуживаем " + getModelName());
+        Transport.updateTyre(getWheelsCount());
     }
 }
