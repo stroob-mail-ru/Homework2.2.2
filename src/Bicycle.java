@@ -1,4 +1,4 @@
-public class Bicycle extends Transport implements ServiceStation {
+public class Bicycle extends Transport implements Maintainable {
 
     public Bicycle(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
@@ -17,6 +17,6 @@ public class Bicycle extends Transport implements ServiceStation {
     public void check() {
         System.out.println();
         System.out.println("Обслуживаем " + getModelName());
-        Transport.updateTyre(getWheelsCount());
+        updateTyre(getWheelsCount());
     }
 }

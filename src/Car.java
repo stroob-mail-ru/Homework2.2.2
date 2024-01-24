@@ -1,4 +1,4 @@
-public class Car extends Transport implements ServiceStation {
+public class Car extends Transport implements Maintainable {
 
     public Car(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
@@ -12,12 +12,15 @@ public class Car extends Transport implements ServiceStation {
     public int getWheelsCount() {
         return super.getWheelsCount();
     }
+    public void checkEngine() {
+        System.out.println("Проверяем двигатель");
+    }
 
     @Override
     public void check() {
         System.out.println();
         System.out.println("Обслуживаем " + getModelName());
-        Transport.updateTyre(getWheelsCount());
-        Transport.checkEngine();
+        updateTyre(getWheelsCount());
+        checkEngine();
     }
 }

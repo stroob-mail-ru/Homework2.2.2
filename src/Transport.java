@@ -14,16 +14,9 @@ public abstract class Transport {
         return wheelsCount;
     }
 
-    protected static void updateTyre(int wheelsCount) {
+    protected void updateTyre(int wheelsCount) {
         for (int i = 0; i < wheelsCount; i++) {
-            System.out.println("Меняем покрышку");;
+            System.out.println("Меняем покрышку");
         }
     }
-    protected static void checkEngine() {
-        System.out.println("Проверяем двигатель");
-    }
-    protected static void checkTrailer() {
-        System.out.println("Проверяем прицеп");
-    }
-
 }
